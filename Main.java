@@ -1,11 +1,16 @@
 package com.aayush.gulia;
 
-public class Main {
-    // Command line argument that prints all the value
+import java.util.Scanner;
 
+public class Main {
+    // program to add two numbers.
     public static void main(String[] args) {
-	for (int i=0; i< args.length; i++){
-        System.out.println(args[i]);
-    }
+        Scanner scanner = new Scanner(System.in);
+        int a,b,c;
+        System.out.println("Enter two numbers: ");
+        a=scanner.nextInt();
+        b=scanner.nextInt();
+        c=a+b;
+        System.out.println("Sum is "+c);
     }
 }

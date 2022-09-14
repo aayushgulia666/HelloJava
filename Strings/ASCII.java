@@ -1,4 +1,4 @@
-package String;
+package com.aayush.gulia.Strings;
 
 /**
  * @author aayush ,

@@ -1,4 +1,4 @@
-package MultiThreading;
+package com.aayush.gulia.MultiThreading;
 
 /*
 Main method is also a Thread.

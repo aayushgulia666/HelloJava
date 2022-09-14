@@ -1,4 +1,4 @@
-package MultiThreading;
+package com.aayush.gulia.MultiThreading;
 /*
     Multi threading using runnable interface.
 

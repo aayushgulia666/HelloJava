@@ -1,4 +1,4 @@
-package AbstractClass;
+package com.aayush.gulia.Abstract_Class;
 
 abstract public class KFC {
     KFC(){

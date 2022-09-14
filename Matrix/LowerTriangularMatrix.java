@@ -1,4 +1,4 @@
-package Matrix;
+package com.aayush.gulia.Matrix;
 
 import java.util.Scanner;
 

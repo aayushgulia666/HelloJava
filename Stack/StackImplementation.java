@@ -1,4 +1,4 @@
-package Stack;
+package com.aayush.gulia.Stack;
 /*
         @author : Aayush Gulia
         @email : aayushgulia07@outlook.com

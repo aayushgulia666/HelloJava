@@ -1,4 +1,4 @@
-package JDBC;
+package com.aayush.gulia.JDBC_sqlite;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

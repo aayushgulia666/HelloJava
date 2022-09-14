@@ -1,4 +1,4 @@
-package Matrix;
+package com.aayush.gulia.Matrix;
 
 public class DiagonalMatrix {
     public static void main(String[] args) {

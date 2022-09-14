@@ -1,4 +1,4 @@
-package Queue;
+package com.aayush.gulia.Queue;
 
 /*
         @author: Aayush Gulia

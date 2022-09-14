@@ -1,4 +1,4 @@
-package com.aayush.gulia.Patterns;
+package com.aayush.gulia.PrintingPatterns;
 
 public class HalfPyramids {
     static void halfPyramid(int n){

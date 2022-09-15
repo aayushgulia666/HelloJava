@@ -1,6 +1,27 @@
 package com.aayush.gulia.PrintingPatterns;
 
 public class HalfPyramids {
+
+    /**
+     *  Q) Print the pattern.
+     *
+     *          *
+     *          * *
+     *          * * *
+     *          * * * *
+     *          * * * * *
+     *          * * * * * *
+     *          * * * * * * *
+     *
+     *          * * * * * * *
+     *          * * * * * *
+     *          * * * * *
+     *          * * * *
+     *          * * *
+     *          * *
+     *          *
+     *
+     */
     static void halfPyramid(int n){
         for (int i=1; i<=n; i++){
             for (int j=1; j<=i; j++){

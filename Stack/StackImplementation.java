@@ -90,10 +90,4 @@ public class StackImplementation {
             return x;
         }
     }
-
-
-
-//    static void push(int [] a, int element){
-//
-//    }
 }

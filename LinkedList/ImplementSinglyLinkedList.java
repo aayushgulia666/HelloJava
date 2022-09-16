@@ -29,13 +29,30 @@ public class ImplementSinglyLinkedList {
         }
     }
 
+    static Node<Integer> createLinkedList2(int[] A){
+        Node<Integer> first, temp, last;
+
+        first = new Node<>(A[0], null);
+        last=first;
+
+        for (int i=1; i<A.length; i++){
+            temp = new Node<>(A[i], null);
+            last.next = temp;
+            last=temp;
+        }
+
+        return first;
+    }
+
     static void display(Node<Integer> first){
 
         Node<Integer> p = first;
         while (p != null){
-            System.out.println(p.data);
+            System.out.print(p.data + "-> ");
             p = p.next;
         }
+        System.out.print("null");
+        System.out.println();
     }
 
     static void recursiveDisplay(Node<Integer> first){
@@ -282,32 +299,88 @@ public class ImplementSinglyLinkedList {
     }
 
     private static void reverseLinkedList2(Node<Integer> q, Node<Integer> p) {
-        // @TODO: bug in recursive reverse linked list.
-//        if (p != null){
-//            reverseLinkedList2(p, p.next);
-//            p.next = q;
-//        }
-//
-//        else{
-//            head = q;
-//        }
+        /*
+        *  p - pointer
+        *  q - follow pointer
+        *
+        */
+
+        System.out.println("Yet to be implemented!");
     }
 
+    private static void concatLinkedList(Node<Integer> first, Node<Integer> second){
+        // append first linked list with second linked list.
 
+        Node<Integer> p = first;
 
+        while (p.next != null){
+            p = p.next;
+        }
+        p.next = second;
+    }
+
+    static Node<Integer> mergeLinkedList(Node<Integer> first, Node<Integer> second){
+    /*
+      1) Merging using third linked list
+    */
+
+        Node<Integer> third, last, temp;
+
+        Node<Integer> p = first;
+        Node<Integer> q = second;
+
+        if (p.data < q.data){
+            third = new Node<>(p.data, null);
+            p = p.next;
+        }
+        else{
+            third = new Node<>(q.data, null);
+            q= q.next;
+        }
+        last=third;
+
+        while (p != null && q != null){
+            if (p.data < q.data){
+                temp = new Node<>(p.data, null);
+                last.next = temp;
+                last=temp;
+
+                p=p.next;
+            }
+            else{
+                temp = new Node<>(q.data, null);
+                last.next = temp;
+                last=temp;
+
+                q=q.next;
+            }
+        }
+
+        // if nodes are left join it to third linked list as they are already sorted.
+
+        if (p != null){
+            last.next = p;
+        }
+
+        if (q != null){
+            last.next = q;
+        }
+
+        return third;
+    }
 
     public static void main(String[] args) {
 
-        int [] A = {1,2,3,4,5,6,7,8,9};
-        createLinkedList(A);
-        reverseLinkedList2(head, head.next);
-        display(head);
+        int [] A = {2,4,6,8,10};
+        int [] B = {3,6,9,12,15};
 
-//        System.out.println("Element 666 is present at " + improvedSearchElement(head, 666));
-//        System.out.println("Display LL");
-//        display(head);
-//        System.out.println("Now element 666 is present at " + improvedSearchElement(head, 666));
-//        display(head);
+        Node<Integer> first = createLinkedList2(A);
+        display(first);
+        Node<Integer> second = createLinkedList2(B);
+        display(second);
+
+        Node<Integer> third = mergeLinkedList(first, second);
+        display(third);
 
     }
 

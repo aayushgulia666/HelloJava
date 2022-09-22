@@ -2,13 +2,13 @@ package com.aayush.gulia.LinkedList;
 
 public class ImplementSinglyLinkedList {
 
-    static Node<Integer> head;
+    static Node head;
 
-    static class Node<T>{
-        T data;
-        Node<Integer> next;
+    static class Node{
+        int data;
+        Node next;
 
-        Node(T data, Node<Integer> next){
+        Node(int data, Node next){
             this.data = data;
             this.next = next;
         }
@@ -17,36 +17,35 @@ public class ImplementSinglyLinkedList {
     static void createLinkedList(int[] A){
 
         int i;
-        Node<Integer> last, temp;
+        Node last, temp;
 
-        head = new Node<>(A[0], null);
+        head = new Node(A[0], null);
         last = head;
 
         for (i=1; i<A.length; i++){
-            temp = new Node<>(A[i], null);
+            temp = new Node(A[i], null);
             last.next = temp;
             last=temp;
         }
     }
 
-    static Node<Integer> createLinkedList2(int[] A){
-        Node<Integer> first, temp, last;
+    static Node createLinkedList2(int[] A){
+        Node first, last, temp;
 
-        first = new Node<>(A[0], null);
-        last=first;
+        first = new Node(A[0], null);
+        last = first;
 
         for (int i=1; i<A.length; i++){
-            temp = new Node<>(A[i], null);
+            temp = new Node(A[i], null);
             last.next = temp;
-            last=temp;
+            last = temp;
         }
-
         return first;
     }
 
-    static void display(Node<Integer> first){
+    static void display(Node first){
 
-        Node<Integer> p = first;
+        Node p = first;
         while (p != null){
             System.out.print(p.data + "-> ");
             p = p.next;
@@ -55,14 +54,14 @@ public class ImplementSinglyLinkedList {
         System.out.println();
     }
 
-    static void recursiveDisplay(Node<Integer> first){
+    static void recursiveDisplay(Node first){
         if (first != null){
             System.out.println(first.data);
             recursiveDisplay(first.next);
         }
     }
 
-    static int getCount(Node<Integer> first){
+    static int getCount(Node first){
         int count = 0;
 
         while (first != null){
@@ -73,7 +72,7 @@ public class ImplementSinglyLinkedList {
         return count;
     }
 
-    static int sumOfAllElements(Node<Integer> first){
+    static int sumOfAllElements(Node first){
         int sum = 0;
 
         while (first != null){
@@ -84,10 +83,10 @@ public class ImplementSinglyLinkedList {
         return sum;
     }
 
-    static boolean isSorted(Node<Integer> first){
+    static boolean isSorted(Node first){
         boolean sorted = true;
-        Node<Integer> p = first.next;
-        Node<Integer> foll0wPointer = first;
+        Node p = first.next;
+        Node foll0wPointer = first;
 
         while (p != null){
             if (p.data < foll0wPointer.data){
@@ -101,7 +100,7 @@ public class ImplementSinglyLinkedList {
         return sorted;
     }
 
-    static int maxElement(Node<Integer> first){
+    static int maxElement(Node first){
         int max = Integer.MIN_VALUE;
 
         while (first != null){
@@ -113,7 +112,7 @@ public class ImplementSinglyLinkedList {
         return max;
     }
 
-    static int searchElement(Node<Integer> first, int key){
+    static int searchElement(Node first, int key){
         // we can only perform linear search in a linked list.
 
         int nodeCount = 0;
@@ -131,11 +130,11 @@ public class ImplementSinglyLinkedList {
         return -1;
     }
 
-    static int improvedSearchElement(Node<Integer> first, int key){
+    static int improvedSearchElement(Node first, int key){
         int nodeCount = 0;
 
-        Node<Integer> followPointer = first;
-        Node<Integer> p = first;
+        Node followPointer = first;
+        Node p = first;
 
         if (first.data == key){
             return 1;
@@ -161,16 +160,16 @@ public class ImplementSinglyLinkedList {
         return -1;
     }
 
-    static void insertElement(Node<Integer> first, int element, int position){
+    static void insertElement(Node first, int element, int position){
 
-        Node<Integer> followPointer = first;
+        Node followPointer = first;
 
-        Node<Integer> temp;
+        Node temp;
 
         if (position == 1){
             // handle insertion on head
 
-            temp = new Node<>(element, null);
+            temp = new Node(element, null);
             temp.next = followPointer;
             head = temp;
 
@@ -184,7 +183,7 @@ public class ImplementSinglyLinkedList {
                 followPointer = followPointer.next;
             }
 
-            temp = new Node<>(element, null);
+            temp = new Node(element, null);
             temp.next = followPointer.next;
             followPointer.next = temp;
 
@@ -192,11 +191,11 @@ public class ImplementSinglyLinkedList {
         }
     }
 
-    static void insertElementInSortedOrder(Node<Integer> first, int element){
+    static void insertElementInSortedOrder(Node first, int element){
 
-        Node<Integer> p = first;
-        Node<Integer> followPointer = p;
-        Node<Integer> temp;
+        Node p = first;
+        Node followPointer = p;
+        Node temp;
 
         int nodeCount = 0;
 
@@ -209,7 +208,7 @@ public class ImplementSinglyLinkedList {
         }
 
 
-        temp = new Node<>(element, null);
+        temp = new Node(element, null);
 
         if (nodeCount == 0){
             temp.next = first;
@@ -222,12 +221,12 @@ public class ImplementSinglyLinkedList {
         }
     }
 
-    static int deleteElement(Node<Integer> first, int element){
+    static int deleteElement(Node first, int element){
         // return the element and deletes the value.
 
         int x;
-        Node<Integer> p = first;
-        Node<Integer> followPointer = p;
+        Node p = first;
+        Node followPointer = p;
 
         if (p.data == element){
             x = p.data;
@@ -249,12 +248,12 @@ public class ImplementSinglyLinkedList {
         return x;
     }
 
-    static void removeDuplicate(Node<Integer> first){
+    static void removeDuplicate(Node first){
 
         // this method only removes duplicate from a sorted linked list.
 
-        Node<Integer> q = first.next;
-        Node<Integer> p = first;
+        Node q = first.next;
+        Node p = first;
 
         while (q!=null){
             if (q.data != p.data){
@@ -276,16 +275,16 @@ public class ImplementSinglyLinkedList {
                 2) Reversing links.
         */
 
-    static void reverseLinkedList(Node<Integer> first){
+    static void reverseLinkedList(Node first){
         // sliding pointers;
         /*
                  we prefer movement of links rather than movement of data as data can be of larger size,
                  the link consumes constant memory. (size of pointer depends on the compiler).
          */
 
-        Node<Integer> p = first;
-        Node<Integer> q = null;
-        Node<Integer> r = q;
+        Node p = first;
+        Node q = null;
+        Node r = q;
 
 
         while (p != null){
@@ -298,7 +297,7 @@ public class ImplementSinglyLinkedList {
         head = q;
     }
 
-    private static void reverseLinkedList2(Node<Integer> q, Node<Integer> p) {
+    private static void reverseLinkedList2(Node q, Node p) {
         /*
         *  p - pointer
         *  q - follow pointer
@@ -308,10 +307,10 @@ public class ImplementSinglyLinkedList {
         System.out.println("Yet to be implemented!");
     }
 
-    private static void concatLinkedList(Node<Integer> first, Node<Integer> second){
+    private static void concatLinkedList(Node first, Node second){
         // append first linked list with second linked list.
 
-        Node<Integer> p = first;
+        Node p = first;
 
         while (p.next != null){
             p = p.next;
@@ -319,36 +318,36 @@ public class ImplementSinglyLinkedList {
         p.next = second;
     }
 
-    static Node<Integer> mergeLinkedList(Node<Integer> first, Node<Integer> second){
+    static Node mergeLinkedList(Node first, Node second){
     /*
       1) Merging using third linked list
     */
 
-        Node<Integer> third, last, temp;
+        Node third, last, temp;
 
-        Node<Integer> p = first;
-        Node<Integer> q = second;
+        Node p = first;
+        Node q = second;
 
         if (p.data < q.data){
-            third = new Node<>(p.data, null);
+            third = new Node(p.data, null);
             p = p.next;
         }
         else{
-            third = new Node<>(q.data, null);
+            third = new Node(q.data, null);
             q= q.next;
         }
         last=third;
 
         while (p != null && q != null){
             if (p.data < q.data){
-                temp = new Node<>(p.data, null);
+                temp = new Node(p.data, null);
                 last.next = temp;
                 last=temp;
 
                 p=p.next;
             }
             else{
-                temp = new Node<>(q.data, null);
+                temp = new Node(q.data, null);
                 last.next = temp;
                 last=temp;
 
@@ -374,14 +373,12 @@ public class ImplementSinglyLinkedList {
         int [] A = {2,4,6,8,10};
         int [] B = {3,6,9,12,15};
 
-        Node<Integer> first = createLinkedList2(A);
+        Node first = createLinkedList2(A);
+        Node second = createLinkedList2(B);
+
         display(first);
-        Node<Integer> second = createLinkedList2(B);
+        System.out.println();
         display(second);
-
-        Node<Integer> third = mergeLinkedList(first, second);
-        display(third);
-
     }
 
 

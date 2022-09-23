@@ -362,6 +362,13 @@ public class ImplementSinglyLinkedList {
         return x;
     }
 
+    /**
+     * Removes all the duplicate elements form the linked list, the linked list should be sorted otherwise this
+     * method will not work.
+     *
+     * @param first Linked List
+     */
+
     public static void removeDuplicate(Node first) {
 
         // this method only removes duplicate from a sorted linked list.
@@ -379,6 +386,12 @@ public class ImplementSinglyLinkedList {
             }
         }
     }
+
+    /**
+     * Reverses the linked list.
+     *
+     * @param first Linked List
+     */
 
         /*
                 we can reverse the linked list by two ways:
@@ -409,6 +422,12 @@ public class ImplementSinglyLinkedList {
         head = q;
     }
 
+    /**
+     * This method is yet to be implemented.
+     * @param q Node
+     * @param p Node
+     */
+
     public static void reverseLinkedList2(Node q, Node p) {
         /*
          *  p - pointer
@@ -418,6 +437,13 @@ public class ImplementSinglyLinkedList {
 
         System.out.println("Yet to be implemented!");
     }
+
+    /**
+     * Appends first linked list with second.
+     *
+     * @param first First linked list.
+     * @param second Second Linked list.
+     */
 
     public static void concatLinkedList(Node first, Node second) {
         // append first linked list with second linked list.
@@ -429,6 +455,16 @@ public class ImplementSinglyLinkedList {
         }
         p.next = second;
     }
+
+    /**
+     * Merges both the linked list and returns a new linked list.
+     *
+     * After merging the resulting linked list is in sorted order.
+     *
+     * @param first Linked list <i>first<i/>.
+     * @param second Linked list <i>second<i/>.
+     * @return Node pointing to the third linked list containing the merged linked list.
+     */
 
     static Node mergeLinkedList(Node first, Node second) {
     /*
@@ -465,7 +501,7 @@ public class ImplementSinglyLinkedList {
             }
         }
 
-        // if nodes are left join it to third linked list as they are already sorted.
+        // if nodes are left, join it to third linked list as they are already sorted.
 
         if (p != null) {
             last.next = p;
@@ -477,6 +513,14 @@ public class ImplementSinglyLinkedList {
 
         return third;
     }
+
+    /**
+     * Merge both the linked list without using a new linked list.
+     *
+     * @param first Linked list <i>first<i/>.
+     * @param second Linked list <i>second<i/>.
+     * @return Merged linked list.
+     */
 
     public static Node mergeLinkedList2(Node first, Node second) {
         Node third, last;
@@ -515,16 +559,4 @@ public class ImplementSinglyLinkedList {
 
         return third;
     }
-
-    public static void main(String[] args) {
-
-        int[] A = {2, 4, 6, 8, 10};
-        int[] B = {3, 6, 9, 12, 15};
-
-        Node first = createLinkedList2(A);
-        int x = deleteElement(first, 5);
-        System.out.println(x);
-    }
-
-
 }

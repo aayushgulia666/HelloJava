@@ -1,18 +1,43 @@
 package com.aayush.gulia.LinkedList;
 
+/**
+ * This class shows implementation of Singly Linked List.
+ *
+ * @see <a href="https://www.hackerearth.com/practice/data-structures/linked-list/singly-linked-list/tutorial/">Singly linked list</a>
+ * @since 23-09-2022
+ */
+
 public class ImplementSinglyLinkedList {
 
     static Node head;
 
+    /**
+     * Singly Linked List node structure is defined in Node class.
+     */
+
     static class Node {
         int data;
         Node next;
+
+        /**
+         * This constructor is called whenever a node is created.
+         *
+         *
+         * @param data stores the data that user wants to store inside the node of linked list.
+         * @param next stores the reference to next node of the linked list.
+         */
 
         Node(int data, Node next) {
             this.data = data;
             this.next = next;
         }
     }
+
+    /**
+     * This method creates a linked list.
+     *
+     * @param A An array which stores the elements to be inserted into the linked list.
+     */
 
     public static void createLinkedList(int[] A) {
 
@@ -29,6 +54,13 @@ public class ImplementSinglyLinkedList {
         }
     }
 
+    /**
+     * This method creates a singly linked list and returns an object of type Node pointing to the head of the linked list.
+     *
+     * @param A An array which stores the elements to be inserted into the linked list.
+     * @return returns a Node pointing to the linked list.
+     */
+
     public static Node createLinkedList2(int[] A) {
         Node first, last, temp;
 
@@ -43,6 +75,11 @@ public class ImplementSinglyLinkedList {
         return first;
     }
 
+    /**
+     * Display all the elements inside the linked list.
+     * @param first Linked List to display.
+     */
+
     public static void display(Node first) {
 
         Node p = first;
@@ -54,12 +91,23 @@ public class ImplementSinglyLinkedList {
         System.out.println();
     }
 
+    /**
+     * Display all the elements inside the linked list recursively.
+     * @param first Linked List to display.
+     */
+
     public static void recursiveDisplay(Node first) {
         if (first != null) {
             System.out.println(first.data);
             recursiveDisplay(first.next);
         }
     }
+
+    /**
+     * Returns the number of nodes in the linked list.
+     * @param first Linked List to get the count.
+     * @return an integer equal to number of nodes in the linked list.
+     */
 
     public static int getCount(Node first) {
         int count = 0;
@@ -72,6 +120,12 @@ public class ImplementSinglyLinkedList {
         return count;
     }
 
+    /**
+     * Returns the sum of all elements of the linked list.
+     * @param first Linked List to get the sum of all the nodes (elements).
+     * @return an integer having sum of all the elements of the linked list.
+     */
+
     public static int sumOfAllElements(Node first) {
         int sum = 0;
 
@@ -82,6 +136,12 @@ public class ImplementSinglyLinkedList {
 
         return sum;
     }
+
+    /**
+     * Check if the linked list is sorted or not.
+     * @param first Head of the linked list.
+     * @return a boolean value telling list is sorted or not.
+     */
 
     public static boolean isSorted(Node first) {
         boolean sorted = true;
@@ -100,6 +160,12 @@ public class ImplementSinglyLinkedList {
         return sorted;
     }
 
+    /**
+     * Returns the maximum element in the linked list.
+     * @param first Linked list to get the maximum element.
+     * @return an integer having the maximum element.
+     */
+
     public static int maxElement(Node first) {
         int max = Integer.MIN_VALUE;
 
@@ -111,6 +177,13 @@ public class ImplementSinglyLinkedList {
         }
         return max;
     }
+
+    /**
+     * Searches for a key inside the linked list.
+     * @param first Linked list to perform searching.
+     * @param key The element which is searched.
+     * @return an integer 1 if key is found else returns -1.
+     */
 
     public static int searchElement(Node first, int key) {
         // we can only perform linear search in a linked list.
@@ -129,6 +202,17 @@ public class ImplementSinglyLinkedList {
 
         return -1;
     }
+
+    /**
+     * Improved version of method searchElement().
+     *
+     * Once the key is found, the node containing
+     * the key is shifted to the head of the linked list.
+     * If the key is searched again it is found in only one iteration
+     * @param first Head of the linked list.
+     * @param key Element to search inside the linked list.
+     * @return an integer 1 if key is found else -1.
+     */
 
     public static int improvedSearchElement(Node first, int key) {
         int nodeCount = 0;
@@ -160,6 +244,14 @@ public class ImplementSinglyLinkedList {
         return -1;
     }
 
+    /**
+     * Inserts an element at a given position in the linked list.
+     *
+     * @param first Linked list in which element will be inserted.
+     * @param element Value of element to be inserted.
+     * @param position Position at which the element will be inserted into linked list.
+     */
+
     public static void insertElement(Node first, int element, int position) {
 
         Node followPointer = first;
@@ -189,6 +281,13 @@ public class ImplementSinglyLinkedList {
         }
     }
 
+    /**
+     * Inserts element in the sorted linked list in sorted order.
+     *
+     * @param first Linked list in which the element will be inserted.
+     * @param element value of the element.
+     */
+
     public static void insertElementInSortedOrder(Node first, int element) {
 
         Node p = first;
@@ -217,19 +316,35 @@ public class ImplementSinglyLinkedList {
         }
     }
 
+    /**
+     *Return the element and delete it from the linked list.
+     *
+     * deleteElement() method searches the element
+     * in the linked list and if found returns the value
+     * and deletes it from the linked list.
+     *
+     * If the element is not found then -1 is returned.
+     *
+     * @param first head of the linked list.
+     * @param element value of element to be deleted from the linked list.
+     * @return deleted element is returned.
+     */
+
     public static int deleteElement(Node first, int element) {
         // return the element and deletes the value.
 
-        int x;
+        int x = -1;
         Node p = first;
         Node followPointer = p;
 
+        // if element is found at head.
         if (p.data == element) {
             x = p.data;
             head = first.next;
             return x;
         }
 
+        // search in the linked list.
         while (p != null) {
             if (p.data == element) {
                 break;
@@ -238,9 +353,12 @@ public class ImplementSinglyLinkedList {
             p = p.next;
         }
 
-        assert p != null;
-        x = p.data;
-        followPointer.next = p.next;
+        if (p != null){
+            x = p.data;
+            followPointer.next = p.next;
+            return x;
+        }
+
         return x;
     }
 
@@ -404,10 +522,8 @@ public class ImplementSinglyLinkedList {
         int[] B = {3, 6, 9, 12, 15};
 
         Node first = createLinkedList2(A);
-        Node second = createLinkedList2(B);
-
-        Node third = mergeLinkedList2(first, second);
-        display(third);
+        int x = deleteElement(first, 5);
+        System.out.println(x);
     }
 
 

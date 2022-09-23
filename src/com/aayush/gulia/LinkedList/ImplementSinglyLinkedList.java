@@ -9,6 +9,10 @@ package com.aayush.gulia.LinkedList;
 
 public class ImplementSinglyLinkedList {
 
+    /**
+     * Global reference for linked list.
+     */
+
     static Node head;
 
     /**
@@ -461,8 +465,8 @@ public class ImplementSinglyLinkedList {
      *
      * After merging the resulting linked list is in sorted order.
      *
-     * @param first Linked list <i>first<i/>.
-     * @param second Linked list <i>second<i/>.
+     * @param first Linked list <i>first</i>.
+     * @param second Linked list <i>second</i>.
      * @return Node pointing to the third linked list containing the merged linked list.
      */
 
@@ -517,8 +521,8 @@ public class ImplementSinglyLinkedList {
     /**
      * Merge both the linked list without using a new linked list.
      *
-     * @param first Linked list <i>first<i/>.
-     * @param second Linked list <i>second<i/>.
+     * @param first Linked list <i>first</i>.
+     * @param second Linked list <i>second</i>.
      * @return Merged linked list.
      */
 

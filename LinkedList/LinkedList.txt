@@ -1,1 +1,0 @@
-This directory contains implementation of linked list in java.

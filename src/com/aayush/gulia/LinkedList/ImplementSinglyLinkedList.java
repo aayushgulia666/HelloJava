@@ -563,4 +563,37 @@ public class ImplementSinglyLinkedList {
 
         return third;
     }
+
+    /**
+     * Tells if loop is present in a linked list.
+     *
+     * @param first First element of linked list.
+     * @return a true if loop is present else returns false.
+     */
+
+    public static boolean isLoop(Node first){
+        Node p, q;
+        p = q = first;
+
+        do {
+            p = p.next;
+            q = q.next;
+            p = (p != null) ? p = p.next : p;
+        }while (p != null && q != null && p!=q);
+
+        return p == q;
+    }
+
+    public static void main(String[] args) {
+        int[] a = {1,2,3,4,5};
+        Node first = createLinkedList2(a);
+
+        // creates a loop in the linked list.
+        Node n1 = first.next;
+        Node n2 = first.next.next.next;
+        n2.next = n1;
+
+        System.out.println(isLoop(first));
+
+    }
 }

@@ -572,6 +572,13 @@ public class SinglyLinkedList {
      */
 
     public static boolean isLoop(Node first){
+        /*
+        creates a loop in the linked list.
+
+        Node n1 = first.next;
+        Node n2 = first.next.next.next;
+        n2.next = n1;
+         */
         Node p, q;
         p = q = first;
 
@@ -586,18 +593,5 @@ public class SinglyLinkedList {
         }while (p != null && q != null && p!=q);
 
         return p == q;
-    }
-
-    public static void main(String[] args) {
-        int[] a = {1,2,3,4,5};
-        Node first = createLinkedList2(a);
-
-        // creates a loop in the linked list.
-        Node n1 = first.next;
-        Node n2 = first.next.next.next;
-        n2.next = n1;
-
-        System.out.println(isLoop(first));
-
     }
 }

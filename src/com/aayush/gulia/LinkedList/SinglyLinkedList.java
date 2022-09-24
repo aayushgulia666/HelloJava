@@ -7,7 +7,7 @@ package com.aayush.gulia.LinkedList;
  * @since 23-09-2022
  */
 
-public class ImplementSinglyLinkedList {
+public class SinglyLinkedList {
 
     /**
      * Global reference for linked list.

@@ -6,6 +6,7 @@ package com.aayush.gulia.LinkedList;
  * Linked list in which the last node points on the first node is known as <i>Circular Linked List</i>.
  * The nodes are circularly connected. It is same as singly linked list but the last node points to the head node.
  *
+ * @author Aayush Gulia <aayushgulia07@outlook.com>
  * @see <a href="https://www.geeksforgeeks.org/circular-linked-list/">Circular Linked List</a>
  * @since 25-09-2022
  */

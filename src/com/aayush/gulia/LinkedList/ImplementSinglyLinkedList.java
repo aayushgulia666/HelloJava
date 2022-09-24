@@ -578,7 +578,11 @@ public class ImplementSinglyLinkedList {
         do {
             p = p.next;
             q = q.next;
-            p = (p != null) ? p = p.next : p;
+
+            if (p != null){
+                p = p.next;
+            }
+
         }while (p != null && q != null && p!=q);
 
         return p == q;

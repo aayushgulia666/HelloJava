@@ -95,7 +95,17 @@ public class CircularLinkedList {
         System.out.println();
     }
 
+    /**
+     * static variable flag for recursiveDisplayCircularLinkedList
+     */
+
     static int flag = 0;
+
+    /**
+     * Displays all the elements of circular linked list (recursively).
+     * @param head Circular linked list to be displayed.
+     */
+
     public static void recursiveDisplayCircularLinkedList(Node head){
 
         if (head != Head || flag == 0){
@@ -106,7 +116,5 @@ public class CircularLinkedList {
         flag = 0;
     }
 
-    public static void main(String[] args) {
 
-    }
 }

@@ -33,16 +33,22 @@ public class CircularLinkedList {
     }
 
     /**
+     *  Head Static global variable for Circular linked list.
+     */
+
+    static Node Head;
+
+    /**
      * Creates a Circular linked list.
      *
      * @param A an array of type integer which stores the element to be inserted into the Circular linked list.
      * @return an object of type Node pointing to the first element <i>Head</i> of the Circular linked list.
      */
 
-    public static Node createCircularLinkedList(int[] A){
-        Node head, last, temp;
-        head = new Node(A[0], null);
-        last = head;
+    public static void createCircularLinkedList(int[] A){
+        Node last, temp;
+        Head = new Node(A[0], null);
+        last = Head;
 
         int i;
         for (i=1; i<A.length; i++){
@@ -51,8 +57,22 @@ public class CircularLinkedList {
             last = temp;
         }
 
-        last.next = head; // point the last node to head.
+        last.next = Head; // point the last node to head.
+    }
 
+    public static Node createCircularLinkedListReference(int[] a){
+        Node head, temp, last;
+        head = new Node(a[0], null);
+        last = head;
+
+        int i;
+        for (i=1; i<a.length; i++){
+            temp = new Node(a[i], null);
+            last.next = temp;
+            last = temp;
+        }
+
+        last.next = head;
         return head;
     }
 
@@ -69,8 +89,24 @@ public class CircularLinkedList {
                 System.out.print(p.data + "-> ");
                 p = p.next;
             }
-        }while (p != head);
+        }while (p != head && p != null);
 
         System.out.print("null");
+        System.out.println();
+    }
+
+    static int flag = 0;
+    public static void recursiveDisplayCircularLinkedList(Node head){
+
+        if (head != Head || flag == 0){
+            flag = 1;
+            System.out.print(head.data + "-> ");
+            recursiveDisplayCircularLinkedList(head.next);
+        }
+        flag = 0;
+    }
+
+    public static void main(String[] args) {
+
     }
 }

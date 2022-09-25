@@ -36,7 +36,7 @@ public class CircularLinkedList {
      *  Head Static global variable for Circular linked list.
      */
 
-    static Node Head;
+    static Node head;
 
     /**
      * Creates a Circular linked list.
@@ -47,8 +47,8 @@ public class CircularLinkedList {
 
     public static void createCircularLinkedList(int[] A){
         Node last, temp;
-        Head = new Node(A[0], null);
-        last = Head;
+        head = new Node(A[0], null);
+        last = head;
 
         int i;
         for (i=1; i<A.length; i++){
@@ -57,13 +57,13 @@ public class CircularLinkedList {
             last = temp;
         }
 
-        last.next = Head; // point the last node to head.
+        last.next = head; // point the last node to head.
     }
 
     public static Node createCircularLinkedListReference(int[] a){
-        Node head, temp, last;
-        head = new Node(a[0], null);
-        last = head;
+        Node first, temp, last;
+        first = new Node(a[0], null);
+        last = first;
 
         int i;
         for (i=1; i<a.length; i++){
@@ -72,8 +72,8 @@ public class CircularLinkedList {
             last = temp;
         }
 
-        last.next = head;
-        return head;
+        last.next = first;
+        return first;
     }
 
     /**
@@ -103,12 +103,12 @@ public class CircularLinkedList {
 
     /**
      * Displays all the elements of circular linked list (recursively).
-     * @param head Circular linked list to be displayed.
+     * @param first Circular linked list to be displayed.
      */
 
-    public static void recursiveDisplayCircularLinkedList(Node head){
+    public static void recursiveDisplayCircularLinkedList(Node first){
 
-        if (head != Head || flag == 0){
+        if (first != head || flag == 0){
             flag = 1;
             System.out.print(head.data + "-> ");
             recursiveDisplayCircularLinkedList(head.next);
@@ -116,5 +116,22 @@ public class CircularLinkedList {
         flag = 0;
     }
 
+    public static void insertElementInCircularLinkedList(Node first, int element, int position){
+        Node temp;
+        Node p = first;
 
+        if (position == 0){
+            temp = new Node(element, null);
+            temp.next = p;
+            first = temp;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] a = {1,2,3,4,5};
+        Node f = createCircularLinkedListReference(a);
+        displayCircularLinkedList(f);
+        insertElementInCircularLinkedList(f, 56, 0);
+        displayCircularLinkedList(f);
+    }
 }

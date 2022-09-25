@@ -59,13 +59,13 @@ public class SinglyLinkedList {
     }
 
     /**
-     * This method creates a singly linked list and returns an object of type Node pointing to the head of the linked list.
+     * Creates a linked list and returns its reference.
      *
      * @param A An array which stores the elements to be inserted into the linked list.
      * @return returns a Node pointing to the linked list.
      */
 
-    public static Node createLinkedList2(int[] A) {
+    public static Node createLinkedListReference(int[] A) {
         Node first, last, temp;
 
         first = new Node(A[0], null);
@@ -593,5 +593,12 @@ public class SinglyLinkedList {
         }while (p != null && q != null && p!=q);
 
         return p == q;
+    }
+
+    public static void main(String[] args) {
+        int[] a = {1,2,3,4,5};
+        Node f = createLinkedListReference(a);
+        insertElement(f, 45, 0);
+        display(f);
     }
 }

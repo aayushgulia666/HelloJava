@@ -62,6 +62,8 @@ public class DoublyLinkedList {
 
     /**
      * Display doubly linked list.
+     *
+     * Code is same as singly linked list.
      */
 
     public static void display(){
@@ -81,7 +83,13 @@ public class DoublyLinkedList {
      */
 
     public static void display(Node first){
+        Node p = first;
 
+        while (p != null){
+            System.out.print(p.data + "-> ");
+            p = p.next;
+        }
+        System.out.print("");
     }
 
     /**
@@ -165,5 +173,26 @@ public class DoublyLinkedList {
             }
         }
         return x;
+    }
+
+    /**
+     * Reverse the doubly linked list.
+     */
+
+    public static void reverse(){
+        // swap links
+        Node p = head;
+        Node temp;
+
+        while (p != null){
+            temp = p.prev;
+            p.prev = p.next;
+            p.next = temp;
+            p = p.prev; // will go to next node because links are swapped.
+
+            if (p != null && p.next == null){
+                head = p;
+            }
+        }
     }
 }

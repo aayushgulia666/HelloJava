@@ -395,14 +395,14 @@ public class SinglyLinkedList {
                 2) Reversing links.
         */
 
-    public static void reverseLinkedList(Node first) {
+    public static void reverseLinkedList() {
         // sliding pointers;
         /*
                  we prefer movement of links rather than movement of data as data can be of larger size,
                  the link consumes constant memory. (size of pointer depends on the compiler).
          */
 
-        Node p = first;
+        Node p = head;
         Node q = null;
         Node r = q;
 

@@ -124,13 +124,46 @@ public class DoublyLinkedList {
         }
     }
 
-    public static void main(String[] args) {
-        int[] a = {1,2,3,4,5};
-        createDoublyLinkedList(a);
-        display();
-        insert(69, 5);
-        insert(69, 6);
-        insert(69, 7);
-        display();
+    /**
+     * Delete an element from doubly linked list and returns the value.
+     *
+     * @param element data which is deleted.
+     * @return deleted data value is returned.
+     */
+
+    public static int delete(int element){
+        int x = -1;
+
+        Node p = head;
+
+        //handles deletion at head
+        if(p.data == element){
+            x = p.data;
+            head = head.next;
+            return x;
+        }
+
+        // search element in the list
+        int i;
+        while(p != null){
+            if (p.data == element){
+                break;
+            }
+            p = p.next;
+        }
+
+        // delete and return the value.
+        if (p != null){
+            if (p.next == null){
+                x = p.data;
+                p.prev.next = null;
+            }
+            else{
+                x = p.data;
+                p.prev.next = p.next;
+                p.next.prev = p.prev;
+            }
+        }
+        return x;
     }
 }

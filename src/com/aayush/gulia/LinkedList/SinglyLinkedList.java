@@ -285,16 +285,14 @@ public class SinglyLinkedList {
     /**
      * Inserts element in the sorted linked list in sorted order.
      *
-     * @param first Linked list in which the element will be inserted.
      * @param element value of the element.
      */
 
-    public static void insertElementInSortedOrder(Node first, int element) {
+    public static void insertElementInSortedOrder(int element) {
 
-        Node p = first;
+        Node p = head;
         Node followPointer = p;
         Node temp;
-
         int nodeCount = 0;
 
         if (p.data != element) {
@@ -305,11 +303,10 @@ public class SinglyLinkedList {
             }
         }
 
-
         temp = new Node(element, null);
 
         if (nodeCount == 0) {
-            temp.next = first;
+            temp.next = head;
             head = temp;
         } else {
             temp.next = followPointer.next;

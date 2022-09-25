@@ -385,7 +385,6 @@ public class SinglyLinkedList {
     /**
      * Reverses the linked list.
      *
-     * @param first Linked List
      */
 
         /*
@@ -423,7 +422,7 @@ public class SinglyLinkedList {
      * @param p Node
      */
 
-    public static void reverseLinkedList2(Node q, Node p) {
+    public static void reverseLinkedListRecursive(Node q, Node p) {
         /*
          *  p - pointer
          *  q - follow pointer

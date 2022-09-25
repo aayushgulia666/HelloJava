@@ -251,37 +251,34 @@ public class SinglyLinkedList {
     /**
      * Inserts an element at a given position in the linked list.
      *
-     * @param first Linked list in which element will be inserted.
      * @param element Value of element to be inserted.
      * @param position Position at which the element will be inserted into linked list.
      */
 
-    public static void insertElement(Node first, int element, int position) {
+    public static void insertElement(int element, int position) {
 
-        Node followPointer = first;
-
+        Node pointer = head;
         Node temp;
 
-        if (position == 1) {
+        if (position == 0) {
             // handle insertion on head
 
             temp = new Node(element, null);
-            temp.next = followPointer;
+            temp.next = head;
             head = temp;
+        }
 
-            System.out.println("Element inserted at index " + (position + 1));
-        } else {
+        else
+        {
             // handle insertion in between or at last of linked list.
 
             for (int i = 1; i < position; i++) {
-                followPointer = followPointer.next;
+                pointer = pointer.next;
             }
 
             temp = new Node(element, null);
-            temp.next = followPointer.next;
-            followPointer.next = temp;
-
-            System.out.println("Element inserted at index " + (position + 1));
+            temp.next = pointer.next;
+            pointer.next = temp;
         }
     }
 
@@ -593,12 +590,5 @@ public class SinglyLinkedList {
         }while (p != null && q != null && p!=q);
 
         return p == q;
-    }
-
-    public static void main(String[] args) {
-        int[] a = {1,2,3,4,5};
-        Node f = createLinkedListReference(a);
-        insertElement(f, 45, 0);
-        display(f);
     }
 }

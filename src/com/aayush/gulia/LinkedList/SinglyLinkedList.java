@@ -323,22 +323,20 @@ public class SinglyLinkedList {
      *
      * If the element is not found then -1 is returned.
      *
-     * @param first head of the linked list.
      * @param element value of element to be deleted from the linked list.
      * @return deleted element is returned.
      */
 
-    public static int deleteElement(Node first, int element) {
-        // return the element and deletes the value.
+    public static int deleteElement(int element) {
 
         int x = -1;
-        Node p = first;
-        Node followPointer = p;
+        Node p = head;
+        Node follow = p;
 
         // if element is found at head.
         if (p.data == element) {
             x = p.data;
-            head = first.next;
+            head = head.next;
             return x;
         }
 
@@ -347,13 +345,13 @@ public class SinglyLinkedList {
             if (p.data == element) {
                 break;
             }
-            followPointer = p;
+            follow = p;
             p = p.next;
         }
 
         if (p != null){
             x = p.data;
-            followPointer.next = p.next;
+            follow.next = p.next;
             return x;
         }
 

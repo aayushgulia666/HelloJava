@@ -60,6 +60,10 @@ public class DoublyLinkedList {
         }
     }
 
+    /**
+     * Display doubly linked list.
+     */
+
     public static void display(){
         Node p = head;
 
@@ -70,7 +74,63 @@ public class DoublyLinkedList {
         System.out.println();
     }
 
+    /**
+     * Display doubly linked list.
+     *
+     * @param first takes head pointer of doubly linked list.
+     */
+
     public static void display(Node first){
 
+    }
+
+    /**
+     * Inserts element at a given position in doubly linked list.
+     *
+     * @param element integer data to be inserted inside the doubly linked list.
+     * @param position index at which the new node will be inserted.
+     */
+
+    public static void insert(int element, int position){
+        Node p = head;
+        Node temp;
+
+        // handles insertion at head
+        if (position == 0){
+            temp = new Node(element, null, null);
+            temp.next = head;
+            head.prev = temp;
+            head = temp;
+        }
+
+        // handles insertion in between and end
+        else
+        {
+            for (int i=1; i<position; i++){
+                p = p.next;
+            }
+            temp = new Node(element, null, null);
+
+            if (p.next != null){
+                temp.next = p.next;
+                temp.prev = p;
+                p.next.prev = temp;
+                p.next = temp;
+            }
+            else{
+                p.next = temp;
+                temp.prev = p;
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] a = {1,2,3,4,5};
+        createDoublyLinkedList(a);
+        display();
+        insert(69, 5);
+        insert(69, 6);
+        insert(69, 7);
+        display();
     }
 }

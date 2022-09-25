@@ -362,15 +362,14 @@ public class SinglyLinkedList {
      * Removes all the duplicate elements form the linked list, the linked list should be sorted otherwise this
      * method will not work.
      *
-     * @param first Linked List
      */
 
-    public static void removeDuplicate(Node first) {
+    public static void removeDuplicate() {
 
         // this method only removes duplicate from a sorted linked list.
 
-        Node q = first.next;
-        Node p = first;
+        Node q = head.next;
+        Node p = head;
 
         while (q != null) {
             if (q.data != p.data) {

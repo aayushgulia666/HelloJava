@@ -81,4 +81,52 @@ public class CircularDoublyLinkedList {
 
         System.out.println("");
     }
+
+    /**
+     * Insert element (data) at a given position in a circular linked list.
+     *
+     * @param element data inserted in a new node.
+     * @param position index at which new node will be inserted.
+     */
+
+    public static void insertElement(int element, int position){
+        Node p = head;
+        Node temp;
+
+        // handles insertion at head.
+        if (position == 0){
+            temp = new Node(null, element, null);
+
+            temp.next = head;
+            head.prev.next = temp;
+            temp.prev = head.prev;
+            head.prev = temp;
+            head = temp;
+        }
+
+        int i;
+        for (i=1; i<position; i++){
+            p = p.next;
+        }
+
+        temp = new Node(null, element, null);
+
+        // handles insertion at rear.
+        if (p.next == head){
+            temp.next = p.next;
+            p.next.prev = temp;
+            p.next = temp;
+            temp.prev = p;
+        }
+
+        else
+        {
+            // handles insertion in between.
+            temp = new Node(null, element, null);
+            p.next.prev = temp;
+            temp.next = p.next;
+            temp.prev = p;
+            p.next = temp;
+        }
+    }
 }

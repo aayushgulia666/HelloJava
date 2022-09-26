@@ -129,4 +129,52 @@ public class CircularDoublyLinkedList {
             p.next = temp;
         }
     }
+
+    /**
+     * Delete a node from circular linked list.
+     *
+     * @param element data to delete from the linked list.
+     */
+
+    public static void deleteElement(int element){
+        Node p = head;
+
+        // handles deletion at head.
+        if (p.data == element){
+            p.prev.next = p.next;
+            head.next.prev = p.prev;
+            head = head.next;
+        }
+
+        // search element in list.
+
+        do {
+            if (p.data == element){
+                break;
+            }
+
+            p = p.next;
+        }while (p != null &&p != head);
+
+        if (p.next != head){
+            p.next.prev = p.prev;
+            p.prev.next = p.next;
+        }
+        else
+        {
+            p.next.prev = p.prev;
+            p.prev.next = p.next;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] a = {1,2,3,4,5};
+        createList(a);
+        display();
+        deleteElement(3);
+        deleteElement(1);
+        deleteElement(5);
+        display();
+    }
 }
+

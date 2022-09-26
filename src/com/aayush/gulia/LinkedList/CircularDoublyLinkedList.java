@@ -167,14 +167,37 @@ public class CircularDoublyLinkedList {
         }
     }
 
+    /**
+     * Finds the middle element of a linked list.
+     *
+     * Logic: Take two pointer ex: (p ,q) move p two nodes and q one node.
+     *
+     * When p reaches the end of the linked list q will point to the middle element.
+     *
+     */
+
+    public static int midElement(){
+        Node p, q;
+        p = q = head;
+
+        do {
+            p = p.next;
+
+            if (p.next != head){
+                p = p.next;
+            }
+
+            q = q.next;
+        }while (p.next != head);
+
+        return q.data;
+    }
+
     public static void main(String[] args) {
-        int[] a = {1,2,3,4,5};
+        int[] a = {1,2,3,4,5,6,7,8};
         createList(a);
-        display();
-        deleteElement(3);
-        deleteElement(1);
-        deleteElement(5);
-        display();
+        int mid = midElement();
+        System.out.println(mid);
     }
 }
 

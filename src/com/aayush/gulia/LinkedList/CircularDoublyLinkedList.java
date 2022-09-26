@@ -183,7 +183,7 @@ public class CircularDoublyLinkedList {
         do {
             p = p.next;
 
-            if (p.next != head){
+            if (p.next != head){ // check if next node is head.
                 p = p.next;
             }
 

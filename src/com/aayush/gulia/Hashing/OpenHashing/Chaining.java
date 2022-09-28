@@ -7,6 +7,7 @@ package com.aayush.gulia.Hashing.OpenHashing;
  *
  * @author Aayush Gulia <aayushgulia07@outlook.com>
  * @since 26/09/2022
+ * @see <a href="https://www.educative.io/answers/what-is-chaining-in-hash-tables">Chaining in hashing</a>
  */
 public class Chaining {
 

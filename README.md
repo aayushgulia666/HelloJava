@@ -18,7 +18,7 @@ Data Structure is how we store data in the computer memory which can be accessed
 - Stack
 - Queues
 - Matrix
-
+- Hashing
 
 Project Structure 
 

@@ -10,9 +10,20 @@ package com.aayush.gulia.Hashing.OpenHashing;
  */
 public class Chaining {
 
+    /**
+     * This class describes the structure of node used in hash table.
+     */
+
     static class Node{
         int data;
         Node next;
+
+        /**
+         * Constructor creates a new node whenever called.
+         *
+         * @param data element stored
+         * @param next reference to next node.
+         */
 
         Node(int data, Node next){
             this.data = data;
@@ -20,13 +31,30 @@ public class Chaining {
         }
     }
 
+    /**
+     * Global reference to hash table.
+     */
+
     static Node[] hashTable = new Node[10];
+
+    /**
+     * Initializes hash table.
+     *
+     * creates node and assign memory to each node.
+     *
+     * This method must be called inorder to use hash table.
+     */
 
     static void initializeHashTable(){
         for (int i=0; i<hashTable.length; i++){
             hashTable[i] = new Node(-1, null);
         }
     }
+
+    /**
+     * Insert element inside the hash table.
+     * @param element data inserted.
+     */
 
     static void insertElement(int element){
         Node p, temp;
@@ -41,6 +69,11 @@ public class Chaining {
         }
         p.next = temp;
     }
+
+    /**
+     * Inserts element in hash table in sorted order.
+     * @param element data inserted in hash table.
+     */
 
     static void insertElementInSortedOrder(int element){
         Node temp = new Node(element, null);
@@ -58,19 +91,44 @@ public class Chaining {
         f.next = temp;
     }
 
+    /**
+     * This function is responsible for assigning index to every element i.,e (hash).
+     *
+     * Hashing function maps the data to hash table.
+     * @param element data to be inserted
+     * @return hash value or digest (i.,e index where the element will be inserted.)
+     */
+
     static int hashFunction(int element){
         return element%10;
     }
 
+    /**
+     * Inserts single element in sorted order.
+     * @param element data to be inserted.
+     */
+
     public static void insert(int element){
         insertElementInSortedOrder(element);
     }
+
+    /**
+     * Inserts an array of elements at once.
+     * @param elements array of element of type integer.
+     */
 
     public static void insertData(int[] elements){
         for (int element : elements) {
             insert(element);
         }
     }
+
+    /**
+     * search an element inside the hash table.
+     *
+     * @param element data to be searched.
+     * @return returns a boolean value.
+     */
 
     public static boolean search(int element){
         Node p = hashTable[hashFunction(element)];
@@ -87,5 +145,11 @@ public class Chaining {
             p = p.next;
         }
         return false;
+    }
+
+    public static void main(String[] args) {
+        initializeHashTable();
+        insertData(new int[] {1,2,3,4,5,6,66,666,6666,66666666,7});
+        System.out.println(search(7));
     }
 }

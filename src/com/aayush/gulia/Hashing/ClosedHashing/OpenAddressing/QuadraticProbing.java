@@ -1,18 +1,19 @@
 package com.aayush.gulia.Hashing.ClosedHashing.OpenAddressing;
 
 /**
- * This class implement Linear probing.
+ * This class implements Quadratic probing.
  *
- * @author Aayush Gulia <aayushgulia07@outlook.com>
+ * Same as linear probing but elements are stored at a distance if collision occurs.
  *
- * @see <a href="shorturl.at/dGJKT">Linear Probing<a/>
+ * h(x) = (h(x) + f(i))%SIZE where x --> element , f(i) = i^2 , i = 0,1,2, and so on,
  *
+ * Same as linear probing but instead of i we use i^2.
+ *
+ * @author Aayush Gulia  <aayushgulia88@gmail.com>
  * @since 28/09/2022
- *
  */
 
-public class LinearProbing {
-
+public class QuadraticProbing {
     static int[] hashtable;
     static int SIZE = 10;
     static int entries;
@@ -25,14 +26,14 @@ public class LinearProbing {
         return element%SIZE;
     }
 
-    public static int probing(int element){
+    public static int quadraticProbing(int element){
         int index = hashFunction(element);
 
         int i=1;
-        while (hashtable[(index + i)%SIZE] != 0 && i <= SIZE){
+        while (hashtable[(index + i*i)%SIZE] != 0 && i <= SIZE){
             i++;
         }
-        return (index + i)%SIZE;
+        return (index + i*i)%SIZE;
     }
 
     public static void insert(int element){
@@ -40,7 +41,7 @@ public class LinearProbing {
         float lf = loadFactor();
 
         if (hashtable[index] != 0 && lf < 0.5){
-            index = probing(element);
+            index = quadraticProbing(element);
         }
 
         if (lf < 0.5){
@@ -65,9 +66,9 @@ public class LinearProbing {
 
             do {
                 i++;
-            }while (hashtable[(index + i)%SIZE] != element && hashtable[(index + i)%SIZE] != 0 && (index + i)%SIZE != index);
+            }while (hashtable[(index + i*i)%SIZE] != element && hashtable[(index + i*i)%SIZE] != 0 && (index + i*i)%SIZE != index);
 
-            return hashtable[(index + i) % SIZE] == element;
+            return hashtable[(index + i*i) % SIZE] == element;
         }
     }
 
@@ -88,5 +89,9 @@ public class LinearProbing {
 
     public static void main(String[] args) {
         initializeHashTable();
+        insert(34);
+        insert(34);
+        insert(34);
+        System.out.println(search(34));
     }
 }

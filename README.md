@@ -18,4 +18,34 @@ Data Structure is how we store data in the computer memory which can be accessed
 - Stack
 - Queues
 - Matrix
+- Hashing
+
+Project Structure 
+
+```bash
+
+└───src
+    └───com
+        └───aayush
+            └───gulia
+                ├───Abstract_Class
+                ├───Hashing
+                │   ├───ClosedHashing
+                │   │   └───OpenAddressing
+                │   └───OpenHashing
+                ├───IO
+                │   └───Classes
+                ├───JDBC_sqlite
+                ├───LinkedList
+                ├───Matrix
+                ├───Misc
+                ├───MultiThreading
+                ├───Polymorphism
+                │   ├───Method_Overloading
+                │   └───Parameterized_Constructor
+                ├───PrintingPatterns
+                ├───Queue
+                ├───Stack
+                └───Strings
+```
 

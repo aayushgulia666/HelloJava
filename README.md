@@ -23,7 +23,6 @@ Data Structure is how we store data in the computer memory which can be accessed
 Project Structure 
 
 ```bash
-
 └───src
     └───com
         └───aayush
@@ -46,6 +45,8 @@ Project Structure
                 ├───PrintingPatterns
                 ├───Queue
                 ├───Stack
-                └───Strings
+                ├───Strings
+                └───Tree
+                    └───BinaryTree
 ```
 

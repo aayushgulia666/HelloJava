@@ -1,5 +1,11 @@
 package com.aayush.gulia.Hashing.ClosedHashing.OpenAddressing;
 
+// @TODO: Complete Double hashing.
+
+/**
+ * This class is not implemented correctly, will be later.
+ */
+
 public class DoubleHashing {
     static int[] hashtable;
     static int SIZE = 10;

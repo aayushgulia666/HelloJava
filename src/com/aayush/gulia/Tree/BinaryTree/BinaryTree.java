@@ -91,7 +91,22 @@ public class BinaryTree {
         }
     }
 
+    /**
+     * Displays preorder traversal of a binary tree.
+     * @param node root node of binary tree.
+     */
+
+    static void preOrder(Node node){
+        if (node != null){
+            System.out.print(node.data + " ");
+            preOrder(node.lChild);
+            preOrder(node.rChild);
+        }
+    }
+
     public static void main(String[] args) {
         createBinaryTree();
+        System.out.println("--------------------x---------------");
+        preOrder(root);
     }
 }

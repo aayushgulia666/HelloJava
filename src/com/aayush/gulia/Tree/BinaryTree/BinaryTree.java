@@ -104,9 +104,35 @@ public class BinaryTree {
         }
     }
 
+    /**
+     * Displays InOrder tree traversal.
+     * @param node root node of tree.
+     */
+
+    static void inOrder(Node node){
+        if (node != null){
+            preOrder(node.lChild);
+            System.out.print(node.data + " ");
+            preOrder(node.rChild);
+        }
+    }
+
+    static void postOrder(Node node){
+        if (node != null){
+            preOrder(node.lChild);
+            preOrder(node.rChild);
+            System.out.print(node.data + " ");
+        }
+    }
+
     public static void main(String[] args) {
         createBinaryTree();
-        System.out.println("--------------------x---------------");
+
+        System.out.println();
         preOrder(root);
+        System.out.println();
+        inOrder(root);
+        System.out.println();
+        postOrder(root);
     }
 }

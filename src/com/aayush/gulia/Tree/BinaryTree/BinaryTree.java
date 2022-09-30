@@ -208,4 +208,30 @@ public class BinaryTree {
             }
         }
     }
+
+    /**
+     * Counts the number of nodes in a binary tree.
+     *
+     * @param node root of binary tree.
+     * @return number of nodes in binary tree.
+     */
+
+    public static int countOfNodes(Node node){
+        int x,y;
+
+        if (node != null){
+            x = countOfNodes(node.lChild);
+            y = countOfNodes(node.rChild);
+
+            return x+y+1;
+        }
+
+        return 0;
+    }
+
+    public static void main(String[] args) {
+        createBinaryTree();
+
+        System.out.println(countOfNodes(root));
+    }
 }

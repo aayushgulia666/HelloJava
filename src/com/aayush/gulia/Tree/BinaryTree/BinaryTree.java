@@ -247,4 +247,19 @@ public class BinaryTree {
 
         return 0;
     }
+
+    /**
+     * Returns height of binary tree.
+     * @param root root node of binary tree.
+     * @return height of binary tree.
+     */
+
+    public static int height(Node root){
+
+        if (root == null){
+            return 0;
+        }
+
+        return Math.max(height(root.lChild), height(root.rChild)) + 1;
+    }
 }

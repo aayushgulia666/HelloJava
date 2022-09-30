@@ -185,6 +185,7 @@ public class BinaryTree {
      * Displays Level order binary tree traversal.
      *
      * This method uses a queue.
+     * @param node root node of binary tree.
      */
 
     public static void levelOrderIterative(Node node){

@@ -29,6 +29,7 @@ Project Structure
         └───aayush
             └───gulia
                 ├───Abstract_Class
+                ├───Array
                 ├───Hashing
                 │   ├───ClosedHashing
                 │   │   └───OpenAddressing
@@ -48,6 +49,7 @@ Project Structure
                 ├───Stack
                 ├───Strings
                 └───Tree
+                    ├───BinarySearchTree
                     └───BinaryTree
 ```
 

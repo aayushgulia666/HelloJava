@@ -72,7 +72,7 @@ public class BinaryTree {
 
             // Left child.
 
-            System.out.println("Enter left child: ");
+            System.out.println("Enter left child of " + p.data + ": ");
             x = scanner.nextInt();
 
             if (x != -1){ // -1 --> node does not exist.
@@ -83,7 +83,7 @@ public class BinaryTree {
 
             // Right child.
 
-            System.out.println("Enter right child: ");
+            System.out.println("Enter right child of " + p.data + ": ");
             x = scanner.nextInt();
 
             if (x != -1){

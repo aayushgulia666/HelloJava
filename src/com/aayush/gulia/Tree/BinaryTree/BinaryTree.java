@@ -175,7 +175,37 @@ public class BinaryTree {
         //@TODO: complete postOrderIterative()
     }
 
+
+    /**
+     * Displays Level order binary tree traversal.
+     *
+     * This method uses a queue.
+     */
+
+    public static void levelOrderIterative(Node node){
+        Queue<Node> que = new LinkedList<Node>();
+
+        System.out.print(node.data + " ");
+        que.add(node);
+
+        while (!que.isEmpty()){
+            node = que.remove();
+
+            if (node.lChild != null){
+                System.out.print(node.lChild.data + " ");
+                que.add(node.lChild);
+            }
+
+            if (node.rChild != null){
+                System.out.print(node.rChild.data + " ");
+                que.add(node.rChild);
+            }
+        }
+    }
+
     public static void main(String[] args) {
         createBinaryTree();
+
+        levelOrderIterative(root);
     }
 }

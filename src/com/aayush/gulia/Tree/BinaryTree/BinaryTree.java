@@ -156,17 +156,26 @@ public class BinaryTree {
     }
 
     public static void inOrderIterative(Node node){
-        //@TODO: completer inOrderIterative()
+        while (node != null || !stack.isEmpty()){
+
+            if (node != null){
+                stack.push(node);
+                node = node.lChild;
+            }
+
+            else {
+                node = stack.pop();
+                System.out.print(node.data + " ");
+                node = node.rChild;
+            }
+        }
     }
 
     public static void postOrderIterative(Node node){
-        //@TODO: completer postOrderIterative()
-
+        //@TODO: complete postOrderIterative()
     }
 
     public static void main(String[] args) {
         createBinaryTree();
-
-        preOrder(root);
     }
 }

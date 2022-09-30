@@ -229,9 +229,22 @@ public class BinaryTree {
         return 0;
     }
 
-    public static void main(String[] args) {
-        createBinaryTree();
+    /**
+     * Returns sum of all the elements in binary tree.
+     * @param node root of binary tree.
+     * @return sum of all nodes.
+     */
 
-        System.out.println(countOfNodes(root));
+    public static int sumOfAllNodes(Node node){
+        int x,y;
+
+        if (node != null){
+            x = sumOfAllNodes(node.lChild);
+            y = sumOfAllNodes(node.rChild);
+
+            return x+y+node.data;
+        }
+
+        return 0;
     }
 }

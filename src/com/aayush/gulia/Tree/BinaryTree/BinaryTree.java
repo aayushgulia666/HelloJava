@@ -3,6 +3,7 @@ package com.aayush.gulia.Tree.BinaryTree;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
+import java.util.Stack;
 
 /**
  * This class implements a binary tree using linked representation with the help of a queue data structure.
@@ -21,6 +22,8 @@ public class BinaryTree {
     static Node root;
     static Queue<Node> queue = new LinkedList<Node>();
     static Scanner scanner = new Scanner(System.in);
+
+    static Stack<Node> stack = new Stack<>();
 
     /**
      * Node class defines the structure of nodes in binary tree.
@@ -117,6 +120,11 @@ public class BinaryTree {
         }
     }
 
+    /**
+     * Displays PostOrder tree traversal
+     * @param node root node of binary tree.
+     */
+
     static void postOrder(Node node){
         if (node != null){
             preOrder(node.lChild);
@@ -125,14 +133,40 @@ public class BinaryTree {
         }
     }
 
+    /**
+     * Displays PreOrder tree traversal iteratively.
+     * @param node root node of binary tree.
+     */
+
+    public static void preOrderIterative(Node node){
+
+        while (node != null || !stack.isEmpty()){
+
+            if (node != null){
+                System.out.print(node.data + " ");
+                stack.push(node);
+                node = node.lChild;
+            }
+
+            else {
+                node = stack.pop();
+                node = node.rChild;
+            }
+        }
+    }
+
+    public static void inOrderIterative(Node node){
+        //@TODO: completer inOrderIterative()
+    }
+
+    public static void postOrderIterative(Node node){
+        //@TODO: completer postOrderIterative()
+
+    }
+
     public static void main(String[] args) {
         createBinaryTree();
 
-        System.out.println();
         preOrder(root);
-        System.out.println();
-        inOrder(root);
-        System.out.println();
-        postOrder(root);
     }
 }

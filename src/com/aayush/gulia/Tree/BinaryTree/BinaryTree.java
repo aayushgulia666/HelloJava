@@ -155,6 +155,11 @@ public class BinaryTree {
         }
     }
 
+    /**
+     * Displays Inorder tree traversal of a binary tree.
+     * @param node root node if binary tree.
+     */
+
     public static void inOrderIterative(Node node){
         while (node != null || !stack.isEmpty()){
 
@@ -201,11 +206,5 @@ public class BinaryTree {
                 que.add(node.rChild);
             }
         }
-    }
-
-    public static void main(String[] args) {
-        createBinaryTree();
-
-        levelOrderIterative(root);
     }
 }

@@ -1,4 +1,4 @@
-package com.aayush.gulia.Sorting.BubbleSort;
+package com.aayush.gulia.Sorting.ComparisionBasedSorts.BubbleSort;
 
 /**
  * This class implements binary search.

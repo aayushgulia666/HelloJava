@@ -50,7 +50,8 @@ Project Structure
                 │   ├───BinarySearch
                 │   └───LinearSearch
                 ├───Sorting
-                │   └───BubbleSort
+                │   └───ComparisionBasedSorts
+                │       └───BubbleSort
                 ├───Stack
                 ├───Strings
                 └───Tree

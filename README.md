@@ -46,6 +46,11 @@ Project Structure
                 │   └───Parameterized_Constructor
                 ├───PrintingPatterns
                 ├───Queue
+                ├───Searching
+                │   ├───BinarySearch
+                │   └───LinearSearch
+                ├───Sorting
+                │   └───BubbleSort
                 ├───Stack
                 ├───Strings
                 └───Tree

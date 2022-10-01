@@ -54,7 +54,9 @@ Project Structure
                 ├───Sorting
                 │   └───ComparisionBasedSorts
                 │       ├───BubbleSort
-                │       └───InsertionSort
+                │       ├───InsertionSort
+                │       ├───QuickSort
+                │       └───SelectionSort
                 ├───Stack
                 ├───Strings
                 └───Tree

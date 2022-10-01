@@ -53,7 +53,8 @@ Project Structure
                 │   └───LinearSearch
                 ├───Sorting
                 │   └───ComparisionBasedSorts
-                │       └───BubbleSort
+                │       ├───BubbleSort
+                │       └───InsertionSort
                 ├───Stack
                 ├───Strings
                 └───Tree

@@ -55,6 +55,7 @@ Project Structure
                 │   └───ComparisionBasedSorts
                 │       ├───BubbleSort
                 │       ├───InsertionSort
+                │       ├───MergeSort
                 │       ├───QuickSort
                 │       └───SelectionSort
                 ├───Stack
@@ -62,5 +63,6 @@ Project Structure
                 └───Tree
                     ├───BinarySearchTree
                     └───BinaryTree
+
 ```
 

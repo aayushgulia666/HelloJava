@@ -24,13 +24,9 @@ public class QuickSort {
         int temp;
 
         do{
-            do {
-                i++;
-            }while (a[i]<=pivot);
+            do {i++;}while (a[i]<=pivot);
 
-            do {
-                j--;
-            }while (a[j]>pivot);
+            do {j--;}while (a[j]>pivot);
 
             if (i<j){
                 temp = a[i];
@@ -66,7 +62,7 @@ public class QuickSort {
     }
 
     public static void main(String[] args) {
-        int[] a =  {10,43,5,70,12,56,90,1,8, Integer.MAX_VALUE};
+        int[] a =  {50,70,60,90,40,80,10,20,30,Integer.MAX_VALUE};
 
         // MAX_VALUE behaves as infinity.
 

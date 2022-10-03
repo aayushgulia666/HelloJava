@@ -1,5 +1,7 @@
 package com.aayush.gulia.Sorting.ComparisionBasedSorts.MergeSort;
 
+import java.util.Arrays;
+
 /**
  * This class implements Merge sort.
  *
@@ -69,6 +71,23 @@ public class MergeSort {
 
         if (p/2<a.length){
             merge(a, 0, p/2-1, a.length-1);
+        }
+    }
+
+    /**
+     * Performs merge sort recursively.
+     * @param a array of elements.
+     * @param l low pointer.
+     * @param h high pointer.
+     */
+
+    public static void recursiveMergeSort(int[] a, int l, int h){
+        int mid;
+        if (l<h){
+            mid = (l+h)/2;
+            recursiveMergeSort(a, l, mid);
+            recursiveMergeSort(a, mid+1, h);
+            merge(a, l, mid, h);
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.aayush.gulia.Array;
+package com.aayush.gulia.Array.Questions;
 
 /**
  * This class finds a peak element in an array using binary search.

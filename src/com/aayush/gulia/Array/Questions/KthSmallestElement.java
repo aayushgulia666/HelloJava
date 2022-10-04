@@ -1,4 +1,4 @@
-package com.aayush.gulia.Array;
+package com.aayush.gulia.Array.Questions;
 
 /**
  * Selection sort gives the Kth smallest element.

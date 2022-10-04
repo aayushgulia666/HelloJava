@@ -1,4 +1,4 @@
-package com.aayush.gulia.Array;
+package com.aayush.gulia.Array.Questions;
 
 public class KthLargestElement {
     /**

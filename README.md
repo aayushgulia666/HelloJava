@@ -32,6 +32,9 @@ Project Structure
             └───gulia
                 ├───Abstract_Class
                 ├───Array
+                │   └───Questions
+                ├───BitManipulation
+                ├───Graph
                 ├───Hashing
                 │   ├───ClosedHashing
                 │   │   └───OpenAddressing
@@ -40,6 +43,7 @@ Project Structure
                 │   └───Classes
                 ├───JDBC_sqlite
                 ├───LinkedList
+                ├───Mathematics
                 ├───Matrix
                 ├───Misc
                 ├───MultiThreading
@@ -48,16 +52,22 @@ Project Structure
                 │   └───Parameterized_Constructor
                 ├───PrintingPatterns
                 ├───Queue
+                ├───Recursion
                 ├───Searching
                 │   ├───BinarySearch
                 │   └───LinearSearch
                 ├───Sorting
-                │   └───ComparisionBasedSorts
-                │       ├───BubbleSort
-                │       ├───InsertionSort
-                │       ├───MergeSort
-                │       ├───QuickSort
-                │       └───SelectionSort
+                │   ├───ComparisionBasedSorts
+                │   │   ├───BubbleSort
+                │   │   ├───InsertionSort
+                │   │   ├───MergeSort
+                │   │   ├───QuickSort
+                │   │   └───SelectionSort
+                │   └───IndexBasedSorts
+                │       ├───BucketSort
+                │       ├───CountSort
+                │       ├───RadixSort
+                │       └───ShellSort
                 ├───Stack
                 ├───Strings
                 └───Tree

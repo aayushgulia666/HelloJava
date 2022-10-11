@@ -22,6 +22,7 @@ Data Structure is how we store data in the computer memory which can be accessed
 - Trees
 - Searching
 - Sorting
+- Graph
 
 Project Structure 
 

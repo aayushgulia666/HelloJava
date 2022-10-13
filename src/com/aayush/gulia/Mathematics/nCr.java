@@ -13,8 +13,7 @@ public class nCr {
         return result;
     }
 
-    public static int nCr(int n, int r){
+    public static int ncr(int n, int r){
         return factorial(n)/(factorial(r)*factorial(n-r));
     }
-
 }

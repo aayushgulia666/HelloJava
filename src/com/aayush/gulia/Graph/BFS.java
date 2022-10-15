@@ -8,7 +8,7 @@ import java.util.Queue;
  * @author Aayush Gulia <aayushgulia07@outlook.com>
  * @since 15/10/2022
  *
- * This class implements Breadth First Search.
+ * This class implements Breadth First Search. In BFS we use a queue data structure for traversal.
  */
 
 public class BFS {
@@ -44,6 +44,9 @@ public class BFS {
         bFS(1);
     }
 
+    /**
+     * This method is used to display graph in form of adjacency matrix.
+     */
     public static void displayMatrix(){
         System.out.println("   0 1 2 3 4 5 6 7");
         System.out.println("   ---------------");
@@ -56,6 +59,9 @@ public class BFS {
         }
     }
 
+    /**
+     * This method initializes a graph using adjacency matrix.
+     */
     public static void initializeMatrix(){
         Arrays.fill(visited, 0); // fill 0 in visited array.
         n = 7;

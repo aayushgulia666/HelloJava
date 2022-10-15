@@ -11,12 +11,16 @@ import java.util.Queue;
  * This class implements Breadth First Search. In BFS we use a queue data structure for traversal.
  */
 
-public class BFS {
+public class Traversal {
     static int[] visited = new int[8];
     static Queue<Integer> queue = new LinkedList<>();
     static int[][] matrix;
     static int n; // number of vertices.
 
+    /**
+     * Performs Breadth First Search on a graph.
+     * @param i starting vertex of graph.
+     */
     public static void bFS(int i){
         int u;
         System.out.println(i + " ");
@@ -37,11 +41,31 @@ public class BFS {
         }
     }
 
+    /**
+     * Performs Depth First Search on a graph.
+     * @param u starting vertex of the graph.
+     */
+
+    public static void dFS(int u){
+        if (visited[u] == 0){
+            System.out.print(u);
+            visited[u] = 1;
+
+            for (int v=1; v<=n; v++){
+                if (matrix[u][v] == 1 && visited[v] == 0){
+                    dFS(v);
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) {
         initializeMatrix();
         displayMatrix();
-        System.out.println("BFS : ");
-        bFS(1);
+        System.out.println("DFS : ");
+        dFS(1);
+//        System.out.println("BFS : ");
+//        bFS(1);
     }
 
     /**

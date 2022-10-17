@@ -16,6 +16,10 @@ public class FindingPeakElement {
         int high = a.length-1;
         int mid;
 
+        if(high == 0){
+            return 0;
+        }
+
         while (low <= high){
             mid = low + ((high - low) / 2);
 

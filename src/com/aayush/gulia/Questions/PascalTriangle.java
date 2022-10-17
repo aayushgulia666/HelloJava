@@ -1,4 +1,4 @@
-package com.aayush.gulia.StriverSheet.Day_1;
+package com.aayush.gulia.Questions;
 
 public class PascalTriangle {
 

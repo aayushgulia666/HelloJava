@@ -1,4 +1,4 @@
-package com.aayush.gulia.StriverSheet.Day_1;
+package com.aayush.gulia.Questions;
 
 public class SetMatrixZero {
     public static void main(String[] args) {
@@ -7,7 +7,22 @@ public class SetMatrixZero {
         setZero(matrix);
         display(matrix);
     }
+
+    private static void inPlaceSetZero(int[][] matrix){
+
+    }
+
+    private static void dummySetZero(int[][] matrix){
+        int[] rows = new int[matrix.length];
+        int[] columns = new int[matrix[0].length];
+
+
+    }
+
+
+
     private static void setZero(int[][] matrix){
+
         for (int i=0; i< matrix.length; i++){
             for (int j=0; j<matrix[0].length; j++){
                 if (matrix[i][j] == 0){

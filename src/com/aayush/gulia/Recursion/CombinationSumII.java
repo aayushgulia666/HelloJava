@@ -28,19 +28,32 @@ public class CombinationSumII {
         combination(index + 1, target, arr, ds);
     }
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        int target = scanner.nextInt();
-        int[] arr = new int[n];
+    static void combinationII(int index, int target, int[] arr){
+        // base case
 
-        for (int i=0; i<n; i++){
-            arr[i] = scanner.nextInt();
+        if (target == 0){
+            ans.add(new ArrayList<>(ds));
+            return;
         }
 
-        Arrays.sort(arr);
+        for (int i=index; i<arr.length; i++) {
+            if (i > index && arr[i] == arr[i - 1]) continue;
+            if (arr[i] > target) break;
 
-        combination(0, target, arr, ds);
+            ds.add(arr[i]);
+            combinationII(i + 1, target - arr[i], arr);
+            ds.remove(ds.size() - 1);
+        }
+    }
+
+    public static void main(String[] args) {
+
+        int[] arr = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
+//        Arrays.sort(arr);
+        int target = 8;
+
+//        combination(0, target, arr, ds);
+        combinationII(0, target, arr);
         System.out.println(ans);
     }
 

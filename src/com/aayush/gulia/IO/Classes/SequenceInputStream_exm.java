@@ -13,7 +13,7 @@ import java.io.SequenceInputStream;
 
 public class SequenceInputStream_exm {
     public static void main(String[] args) throws Exception {
-        FileInputStream fileInputStream1 = new FileInputStream("C:\\CopyUpperToLower\\src\\Final_Production\\Test.txt");
+        FileInputStream fileInputStream1 = new FileInputStream("C:\\CopyUpperToLower\\src\\Final_Production\\com.aayush.gulia.Test.Test.txt");
         FileInputStream fileInputStream2 = new FileInputStream("C:\\CopyUpperToLower\\src\\Final_Production\\Text.txt");
 
         SequenceInputStream sequenceInputStream = new SequenceInputStream(fileInputStream1, fileInputStream2);

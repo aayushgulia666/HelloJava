@@ -4,7 +4,7 @@ import java.io.FileOutputStream;
 
 public class FileOutputStream_exm {
     public static void main(String[] args) throws Exception {
-        FileOutputStream fileOutputStream = new FileOutputStream("C:\\CopyUpperToLower\\src\\Final_Production\\Test.txt");
+        FileOutputStream fileOutputStream = new FileOutputStream("C:\\CopyUpperToLower\\src\\Final_Production\\com.aayush.gulia.Test.Test.txt");
 
         String str = "This is an example of FileOutputString java program.";
         byte[] bytes = str.getBytes();

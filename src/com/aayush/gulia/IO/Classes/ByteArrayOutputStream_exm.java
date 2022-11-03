@@ -14,7 +14,7 @@ import java.io.FileOutputStream;
 public class ByteArrayOutputStream_exm {
     public static void main(String[] args) throws Exception {
         FileOutputStream fileOutputStream1 = new FileOutputStream("C:\\CopyUpperToLower\\src\\Final_Production\\Text.txt");
-        FileOutputStream fileOutputStream2 = new FileOutputStream("C:\\CopyUpperToLower\\src\\Final_Production\\Test.txt");
+        FileOutputStream fileOutputStream2 = new FileOutputStream("C:\\CopyUpperToLower\\src\\Final_Production\\com.aayush.gulia.Test.Test.txt");
 
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
 

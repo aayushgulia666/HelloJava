@@ -1,5 +1,9 @@
 package com.aayush.gulia.LinkedList;
 
+/**
+ * Class to create Singly Linked List.
+ */
+
 public class List {
     static class Node{
         int data;

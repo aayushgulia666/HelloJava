@@ -5,16 +5,16 @@ package com.aayush.gulia.LinkedList;
  */
 
 public class List {
-    static class Node{
-        int data;
-        Node next;
+    public static class Node{
+        public int data;
+        public Node next;
 
-        Node(int data, Node next){
+        public Node(int data, Node next){
             this.data = data;
             this.next = next;
         }
 
-        Node(){}
+        public Node(){}
 
     }
     public static Node createSinglyLinkedList(int[] a){

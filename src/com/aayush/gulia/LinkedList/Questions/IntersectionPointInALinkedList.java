@@ -2,6 +2,11 @@ package com.aayush.gulia.LinkedList.Questions;
 
 import java.util.HashMap;
 
+/**
+ * Leet code 160
+ * @author Aayush Gulia <aayushgulia07@outlook.com>
+ */
+
 public class IntersectionPointInALinkedList {
 
     static class Node{
@@ -83,6 +88,7 @@ public class IntersectionPointInALinkedList {
 
     /**
      * Optimal approach using hashing
+     * T:O(m+n) S:O(m+n)
      * @param first Linked list
      * @param second Linked list
      */
@@ -103,6 +109,12 @@ public class IntersectionPointInALinkedList {
         }
     }
 
+    /**
+     * most optimal approach T:O(n) S:O(1)
+     * @param first Linked list
+     * @param second Linked list
+     */
+
     static void intersectionNodeUsingTempVariable(Node first, Node second){
         Node f = first;
         Node s = second;
@@ -118,12 +130,15 @@ public class IntersectionPointInALinkedList {
 
     public static void main(String[] args) {
         HashMap<Node, Integer> map = new HashMap<>();
+
         int[] a = {1,2,3,4,5};
         int[] b = {6,7,8,9,10};
+
         Node first = createLinkedList(a);
         Node second = createLinkedList(b);
         display(first, second);
         Node t1 = first;
+
         //add intersection
         for (int i=0; i < (a.length/2); i++){
             t1=t1.next;
@@ -137,6 +152,7 @@ public class IntersectionPointInALinkedList {
 
         t1.next = t2;
 //        display(first, second);
+//        display(first);
 
         intersectionNodeUsingTempVariable(first, second);
     }

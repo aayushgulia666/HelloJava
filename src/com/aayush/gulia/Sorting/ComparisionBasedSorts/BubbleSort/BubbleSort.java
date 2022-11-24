@@ -1,7 +1,7 @@
 package com.aayush.gulia.Sorting.ComparisionBasedSorts.BubbleSort;
 
 /**
- * This class implements binary search.
+ * This class implements Bubble sort.
  * @since 01/20/2022
  * @author Aayush Gulia <aayushgulia07@outlook.com>
  * @see <a href="https://www.geeksforgeeks.org/bubble-sort/">Bubble Sort</a>

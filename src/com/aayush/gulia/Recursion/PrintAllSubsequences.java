@@ -1,6 +1,8 @@
 package com.aayush.gulia.Recursion;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * This class prints all the subsequences of array.
@@ -10,31 +12,31 @@ import java.util.LinkedList;
  */
 
 public class PrintAllSubsequences {
-    /**
-     * global references
-     */
-    static int[] arr = {1,2};
-    static LinkedList<Integer> ls = new LinkedList<>();
 
     /**
      * Recursive method for printing all the subsequences.
+     *
      * @param index starting index of array.
+     * @param arr
      */
 
-    public static void subsequence(int index){
+    public static void subsequence(int index, LinkedList<List<Integer>> ans, LinkedList<Integer> ls, int[] arr){
         if (index == arr.length){
-            System.out.println(ls);
+            ans.add(new ArrayList<Integer>(ls));
             return;
         }
 
         ls.add(arr[index]);
-        subsequence(index + 1);
+        subsequence(index + 1, ans, ls, arr);
         ls.removeFirstOccurrence(arr[index]);
 
-        subsequence(index + 1);
+        subsequence(index + 1, ans, ls, arr);
     }
 
     public static void main(String[] args) {
-        subsequence(0);
+        LinkedList<List<Integer>> ans = new LinkedList<>();
+        int[] arr = {1, 2};
+        subsequence(0, ans, new LinkedList<>(), arr);
+        System.out.println(ans);
     }
 }

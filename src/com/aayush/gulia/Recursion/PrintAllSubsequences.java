@@ -1,42 +1,46 @@
 package com.aayush.gulia.Recursion;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
- * This class prints all the subsequences of array.
  * @author Aayush Gulia
  * @since 29/10/2022
- * @see <a href="https://www.geeksforgeeks.org/generating-all-possible-subsequences-using-recursion/">Generating all possible Subsequences using Recursion</a>
+ * @see <a href="https://en.wikipedia.org/wiki/Subsequence">What is a subsequence</a>
+ * last revised: 05/12/2022
  */
 
 public class PrintAllSubsequences {
 
     /**
-     * Recursive method for printing all the subsequences.
+     * A subsequence is a sequence that can be derived from the given sequence by deleting some or no elements,
+     * but the order must be preserved.
      *
      * @param index starting index of array.
-     * @param arr
+     * @param arr sequence of elements.
      */
 
-    public static void subsequence(int index, LinkedList<List<Integer>> ans, LinkedList<Integer> ls, int[] arr){
-        if (index == arr.length){
-            ans.add(new ArrayList<Integer>(ls));
+    static void allSubsequences(int index, int[] arr, ArrayList<Integer> ls, List<ArrayList<Integer>> ds){
+
+        if (index >= arr.length){
+            ds.add(new ArrayList<>(ls));
             return;
         }
 
+        //take
         ls.add(arr[index]);
-        subsequence(index + 1, ans, ls, arr);
-        ls.removeFirstOccurrence(arr[index]);
+        allSubsequences(index+1, arr, ls, ds);
+        ls.remove(ls.size() - 1);
 
-        subsequence(index + 1, ans, ls, arr);
+        //not take
+        allSubsequences(index+1, arr, ls, ds);
     }
 
     public static void main(String[] args) {
-        LinkedList<List<Integer>> ans = new LinkedList<>();
-        int[] arr = {1, 2};
-        subsequence(0, ans, new LinkedList<>(), arr);
-        System.out.println(ans);
+        int[] arr = {1,2,3};
+        List<ArrayList<Integer>> sequences = new ArrayList<>();
+        allSubsequences(0, arr, new ArrayList<>(), sequences);
+        System.out.println(sequences);
     }
+
 }

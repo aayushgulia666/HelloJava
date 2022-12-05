@@ -5,36 +5,37 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Leet code 39
+ * Find combination of elements which sum up to target, one element can repeat itself as many times.
  */
 
 public class CombinationSum {
 
-    static List<List<Integer>> answer = new LinkedList<>();
-    static List<Integer> ds = new LinkedList<>();
+    static void function(int index, int[] arr, int target, ArrayList<Integer> ls, List<ArrayList<Integer>> ds){
 
-    static void findCombination(int index, int target, List<List<Integer>> answer, List<Integer> ds, int[] arr){
-
-        if (index == arr.length){
+        if (index >= arr.length){
             if (target == 0){
-                answer.add(new ArrayList<>(ds));
+                ds.add(new ArrayList<>(ls));
             }
             return;
         }
 
+        //take
         if (arr[index] <= target){
-            ds.add(arr[index]);
-            findCombination(index, target - arr[index], answer, ds, arr);
-            ds.remove(ds.size() -1);
+            target -= arr[index];
+            ls.add(arr[index]);
+            function(index, arr, target, ls, ds);
+            target += arr[index];
+            ls.remove(ls.size() - 1);
         }
 
-        findCombination(index + 1, target, answer, ds, arr);
+        //not take
+        function(index + 1, arr, target, ls, ds);
     }
 
     public static void main(String[] args) {
         int[] arr = {2,3,6,7};
-        int target = 7;
-        findCombination(0, target, answer, ds, arr);
-        System.out.println(answer);
+        List<ArrayList<Integer>> seq = new ArrayList<>();
+        function(0, arr, 7, new ArrayList<>(), seq);
+        System.out.println(seq);
     }
 }

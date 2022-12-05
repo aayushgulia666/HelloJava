@@ -21,10 +21,8 @@ public class CombinationSum {
 
         //take
         if (arr[index] <= target){
-            target -= arr[index];
             ls.add(arr[index]);
-            function(index, arr, target, ls, ds);
-            target += arr[index];
+            function(index, arr, target - arr[index], ls, ds);
             ls.remove(ls.size() - 1);
         }
 

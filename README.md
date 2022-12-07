@@ -23,6 +23,7 @@ Data Structure is how we store data in the computer memory which can be accessed
 - Searching
 - Sorting
 - Graph
+- Dynamic Programming
 
 Project Structure 
 
@@ -35,6 +36,7 @@ Project Structure
                 ├───Array
                 │   └───Questions
                 ├───BitManipulation
+                ├───DynamicProgramming
                 ├───Graph
                 ├───Hashing
                 │   ├───ClosedHashing
@@ -77,6 +79,7 @@ Project Structure
                 └───Tree
                     ├───BinarySearchTree
                     └───BinaryTree
+                        └───Traversals
 
 ```
 

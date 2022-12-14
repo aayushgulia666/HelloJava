@@ -64,6 +64,7 @@ public class FrogJump {
         return dp[n];
     }
 
+    //space optimization
     static int frogJumpTabulation(int n, int[] arr){
         int prev, prev2, left, right=0, ans=0;
 

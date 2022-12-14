@@ -17,17 +17,6 @@ public class SubSetsII {
         }
     }
 
-//    public static void subSet(int index, int[] arr, List<Integer> ds, List<List<Integer>> ans){
-//        ans.add(new ArrayList<>(ds));
-//
-//        for (int i=index; i< arr.length; i++){
-//            if (i != index && arr[i] == arr[i-1]) continue;
-//
-//            ds.add(arr[i]);
-//            subSet(i + 1);
-//        }
-//    }
-
     public static void main(String[] args) {
         List<List<Integer>> answer = new ArrayList<>();
         List<Integer> ds = new ArrayList<>();

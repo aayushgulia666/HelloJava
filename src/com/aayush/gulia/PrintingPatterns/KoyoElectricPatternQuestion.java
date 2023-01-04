@@ -3,7 +3,7 @@ package com.aayush.gulia.PrintingPatterns;
 public class KoyoElectricPatternQuestion {
     /**
      * Q) Print this pattern.
-     * <p>
+     * *
      * * * * * *
      * * * *
      * *

@@ -78,8 +78,8 @@ Project Structure
                 ├───Test
                 └───Tree
                     ├───BinarySearchTree
-                    └───BinaryTree
-                        └───Traversals
-
+                    ├───BinaryTree
+                    │   └───Traversals
+                    └───Questions
 ```
 
